@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Mountain & Bioluminescent Flora 3D</title>
+    <!-- Google Fonts for modern luxury typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- 1. SECTION: OSMO PARALLAX HEADER (SKY, MOUNTAIN MOSS, TITLE, DATARAN MOSS) -->
+    <header class="parallax" id="parallax-header">
+      <div class="parallax__visuals">
+        <div data-parallax-layers class="parallax__layers">
+          
+          <!-- Layer 1: Sky (Langit) -->
+          <img src="/assets/layer_1.webp" loading="eager" data-parallax-layer="1" alt="Sky" class="parallax__layer-img parallax__layer-img--sky" />
+
+          <!-- Layer 2: Mountain (Batu Karang Belakang + Moss Hover) -->
+          <div data-parallax-layer="2" class="parallax__layer parallax__layer--mountain">
+            <div class="parallax__mountain-wrapper">
+              <!-- Base Dark Volcanic Stone Mountain -->
+              <img src="/assets/layer_2.webp" alt="Mountain Base" class="parallax__mountain-img parallax__mountain-stone" />
+              <!-- Living Moss, Grass & Wildflowers Reveal Layer -->
+              <img src="/assets/layer_3.webp" alt="Mountain Moss" class="parallax__mountain-img parallax__mountain-moss" />
+            </div>
+          </div>
+
+          <!-- Layer 3: Typography Title HI, HIMA -->
+          <div data-parallax-layer="3" class="parallax__layer parallax__layer--title">
+            <div class="parallax__title-container">
+              <h1 class="parallax__title">HI, HIMA</h1>
+
+              <!-- Sticky Centered Glowing Lyrics & Audio Player -->
+              <div class="parallax__lyrics-sticky" id="parallax-lyrics" role="region" aria-label="Music & Lyrics">
+                <div class="parallax__lyrics-header">
+                  <button type="button" class="lyrics-audio-btn" id="lyrics-audio-btn" aria-label="Play or pause music">
+                    <span class="lyrics-play-icon" id="lyrics-play-icon">▶</span>
+                    <span class="lyrics-play-text" id="lyrics-play-text">Play Music</span>
+                    <div class="sound-wave" id="sound-wave" aria-hidden="true">
+                      <span class="bar bar-1"></span>
+                      <span class="bar bar-2"></span>
+                      <span class="bar bar-3"></span>
+                    </div>
+                  </button>
+                  <span class="lyrics-divider" aria-hidden="true">•</span>
+                  <span class="lyrics-song-tag" id="lyrics-song-tag">Rex Orange County — Best Friend</span>
+                  <button type="button" class="lyrics-shuffle-btn" id="lyrics-shuffle-btn" title="Randomize / Shuffle Song" aria-label="Shuffle Song">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 3 21 3 21 8"></polyline>
+                      <line x1="4" y1="20" x2="21" y2="3"></line>
+                      <polyline points="21 16 21 21 16 21"></polyline>
+                      <line x1="15" y1="15" x2="21" y2="21"></line>
+                      <line x1="4" y1="4" x2="9" y2="9"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="parallax__lyrics-content">
+                  <p class="parallax__lyrics-text" id="lyrics-text">I should've stayed at home</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 4: Dataran Foreground (Batu Depan + Moss Hover) -->
+          <div data-parallax-layer="4" class="parallax__layer parallax__layer--foreground">
+            <div class="parallax__foreground-wrapper">
+              <!-- Base Dark Volcanic Stone Dataran -->
+              <img src="/assets/layer_4.webp" alt="Foreground Base" class="parallax__foreground-img parallax__foreground-stone" />
+              <!-- Living Moss, Grass & Wildflowers Reveal Layer -->
+              <img src="/assets/layer_5.webp" alt="Foreground Moss" class="parallax__foreground-img parallax__foreground-moss" />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cursor Torch Halo Glow (covers full header to the top) -->
+        <div class="parallax__torch-glow"></div>
+
+        <!-- Smooth bottom fade gradient transitioning into dark night meadow -->
+        <div class="parallax__fade"></div>
+      </div>
+    </header>
+
+    <!-- Transition Separator: Dark spacer separating parallax and 3D meadow -->
+    <div class="parallax-spacer" id="parallax-spacer">
+      <div class="spacer-content-container">
+        <!-- Left: Interactive Curved InfinityText Wheel ("BEST FRIEND" infinite scroll) -->
+        <div class="spacer-infinity-wrapper" id="infinity-text-root"></div>
+
+        <!-- Right: Interactive Logo Hover ("YOU ARE / MY" with video reveal) -->
+        <div class="spacer-logo-wrapper">
+          <div id="logo-hover-root"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.8. SECTION: POETIC GENERATION & ANIMATED TEXT CYCLE -->
+    <section class="text-cycle-section" id="text-cycle-section">
+      <div class="text-cycle-layout-container">
+        <!-- Left: TextGenerateEffect Staggered Blur Reveal Poem -->
+        <div class="text-cycle-left-col" id="text-gen-root"></div>
+
+        <!-- Right: AnimatedTextCycle Dynamic Spring Word Cycler -->
+        <div class="text-cycle-right-col" id="text-cycle-root"></div>
+      </div>
+    </section>
+
+    <!-- 1.9. SECTION: MULTILINGUAL LOVE HEART (iremcnar/loveYou) -->
+    <section class="love-heart-section" id="love-heart-section">
+      <div class="love-heart-canvas-wrapper" id="love-heart-root"></div>
+    </section>
+
+    <!-- 1.95. SECTION: INTERACTIVE 3D KEEPSAKE BOOK (Framer InteractiveBook) -->
+    <section class="interactive-book-section" id="interactive-book-section">
+      <div class="interactive-book-root" id="interactive-book-root"></div>
+    </section>
+
+    <!-- 2. SECTION: 3D BIOLUMINESCENT FLORA MEADOW -->
+    <main class="meadow-section" id="meadow-section">
+      <!-- Full-screen Fixed WebGL Three.js Canvas -->
+      <div id="webgl-canvas-container"></div>
+
+      <!-- Scroll Track driving emergence and blooming -->
+      <div class="scroll-track"></div>
+    </main>
+
+    <!-- Subtle Scroll Hint -->
+    <div class="scroll-hint" id="scroll-hint">
+      <div class="scroll-chevron-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+      <span class="scroll-hint-text">SCROLL</span>
+    </div>
+
+    <!-- Audio Player Element (Rex Orange County Playlist) -->
+    <audio id="bg-music" preload="auto" autoplay></audio>
+
+    <!-- SVG Morphing Threshold Filter for Liquid / Melting Text Effect -->
+    <svg id="morph-filters" class="morph-filters" style="position: fixed; width: 0; height: 0; pointer-events: none; overflow: hidden;" aria-hidden="true">
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 255 -95"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Sticky Centered Liquid Morphing Lyrics (Appears in screen center when header lyrics scroll off) -->
+    <div class="sticky-morph-lyrics" id="sticky-morph-lyrics" role="region" aria-label="Synchronized Liquid Lyrics">
+      <div class="morph-text-container" id="morph-text-container">
+        <span class="morph-text morph-text-1" id="morph-text-1"></span>
+        <span class="morph-text morph-text-2" id="morph-text-2"></span>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

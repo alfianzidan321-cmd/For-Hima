@@ -1,4 +1,4 @@
-# Interactive Mountain & Bioluminescent Flora 3D
+# For Hima
 
 Sebuah web interaktif sinematik dengan visual mewah, perpaduan parallax bertingkat, tipografi dinamis, efek starlight torch, buku 3D interaktif, dan padang bunga bioluminescent 3D (Three.js).
 
